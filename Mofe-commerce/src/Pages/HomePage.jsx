@@ -1,81 +1,77 @@
 import './HomePage.css';
-import MofeLogo  from '../assets/images/product/Vurno-logo.jpg'
-import Socks from '../assets/images/product/Socks.jpg'
-import FourRating from '../assets/images/ratings/Rating 4.5.svg'
+
 
 
 export function HomePage () {
     return (
         <>
-        <header>
-            <div className="vurno-logo-div">
-                <img src={MofeLogo} alt="Mofe-logo" className="vurno-logo" />
-            </div>
+    <header>
+        <div class="vurno-logo-div">
+            <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" class="vurno-logo" />
+        </div>
 
 
-            <div 
-                className="search-bar-and-input">
-                
-                        <input type="text" placeholder="Search" className="input-field"/>
+        <div 
+            class="search-bar-and-input">
+            
+                    <input type="text" placeholder="Search" class="input-field" />
 
-                        <button className="search-bar-icon">
+                    <button class="search-bar-icon">
 
-                            <i className="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
+                        <i class="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
 
-                        </button>
+                    </button>
 
-            </div>
-
-
-
-            <div 
-
-                className="cart-icon-number" onclick="location.href='checkout-page.html'">
+        </div>
 
 
 
-                <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
+        <div 
 
-                
-                <p className="cart-number js-cart-number">0</p>
-
-            </div>
+            class="cart-icon-number" onclick="location.href='checkout-page.html'">
 
 
 
-        </header>
+            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
+
+
+            <p class="cart-number js-cart-number">0</p>
+
+        </div>
+
+
+
+    </header>
 
         <main className="main-content-product js-product-grid">
 
-            
-        
-            <div className="product-image-content">
+            <div class="product-image-content">
 
-                <div className="product-image-div">
-                    <img src={Socks} alt="productimage" className="product-image-div" />
+                <div class="product-image-div">
+                    <img src="images/product/socks.jpg" alt="productimage" class="product-image-div" />
                 </div>
 
-                <div className="product-content">
-                    <p className="product-name">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+                <div class="product-content">
+                    <p class="product-name">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
 
-                    <div className="rating-added-cart">
+                    <div class="rating-added-cart">
                         
-                        <div className="rating-and-count">
-                            <img src={FourRating}alt="rating4.5" className="rating-star" />
-                            <p className="rating-count">87</p>
+                        <div class="rating-and-count">
+                            <img src="images/ratings/Rating 4.5.svg" alt="rating4.5" class="rating-star" />
+                            <p class="rating-count">87</p>
                         </div>
 
 
 
-                        <div className="added-to-cart"> Added </div>
+                        <div class="added-to-cart"> Added </div>
                     </div>
 
 
-                    <div className="price-picker">
-                        <p className="pricing">$6.99</p>
+                    <div class="price-picker">
+                        <p class="pricing">$6.99</p>
 
-                        <select className="product-quantity">
-                            <img src="images/icons/dropsoun-Vector.svg" alt="" />
+                        <select class="product-quantity">
+                            <img src="images/icons/dropsoun-Vector.svg" alt="icon" />
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -91,8 +87,9 @@ export function HomePage () {
 
                 </div>
 
-                <button className="call-to-action"> Add to cart</button>
+                <button class="call-to-action"> Add to cart</button>
             </div>
+
 
             <div className="product-image-content">
 
@@ -137,6 +134,7 @@ export function HomePage () {
                 <button className="call-to-action"> Add to cart</button>
             </div>
 
+
             <div className="product-image-content">
 
                 <div className="product-image-div">
@@ -172,6 +170,7 @@ export function HomePage () {
 
                 <button className="call-to-action"> Add to cart</button>
             </div>
+
 
             <div className="product-image-content">
 
@@ -209,6 +208,7 @@ export function HomePage () {
                 <button className="call-to-action"> Add to cart</button>
             </div>
 
+
             <div className="product-image-content">
 
                 <div className="product-image-div">
@@ -245,6 +245,7 @@ export function HomePage () {
                 <button className="call-to-action"> Add to cart</button>
             </div>
 
+
             <div className="product-image-content">
 
                 <div className="product-image-div">
@@ -280,6 +281,7 @@ export function HomePage () {
 
                 <button className="call-to-action"> Add to cart</button>
             </div>
+
             
             <div className="product-image-content">
 
@@ -319,6 +321,7 @@ export function HomePage () {
 
                 <button className="call-to-action"> Add to cart</button>
             </div>
+
 
             <div className="product-image-content">
 
