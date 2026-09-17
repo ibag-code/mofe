@@ -5,43 +5,43 @@ import './HomePage.css';
 export function HomePage () {
     return (
         <>
-    <header>
-        <div class="vurno-logo-div">
-            <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" class="vurno-logo" />
-        </div>
+        <header>
+            <div class="vurno-logo-div">
+                <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" class="vurno-logo" />
+            </div>
 
 
-        <div 
-            class="search-bar-and-input">
-            
-                    <input type="text" placeholder="Search" class="input-field" />
+            <div 
+                class="search-bar-and-input">
+                
+                        <input type="text" placeholder="Search" class="input-field" />
 
-                    <button class="search-bar-icon">
+                        <button class="search-bar-icon">
 
-                        <i class="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
+                            <i class="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
 
-                    </button>
+                        </button>
 
-        </div>
-
-
-
-        <div 
-
-            class="cart-icon-number" onclick="location.href='checkout-page.html'">
+            </div>
 
 
 
-            <i class="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
+            <div 
 
-
-            <p class="cart-number js-cart-number">0</p>
-
-        </div>
+                class="cart-icon-number" onclick="location.href='checkout-page.html'">
 
 
 
-    </header>
+                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
+
+
+                <p class="cart-number js-cart-number">0</p>
+
+            </div>
+
+
+
+        </header>
 
         <main className="main-content-product js-product-grid">
 
