@@ -7,17 +7,16 @@ export function CheckOutPage () {
         
         <header>
 
-            <div className="vurno-logo">
+            <a className="vurno-logo" href='/'>
                 <img src="images/product/Vurno-logo.jpg" className="Vurno-logo" />
-                <a href="product-page.html"></a>
-            </div>
+            </a>
 
 
         </header>
 
         <div className="back-checkout">
 
-            <a href="product-page.html">
+            <a href="/">
 
                 <i className="hgi hgi-stroke hgi-rounded hgi-arrow-left-01"></i>
 
@@ -27,6 +26,7 @@ export function CheckOutPage () {
 
             <h3 className="dont-display">Checkout <span>(2 item)</span></h3>
         </div>
+
 
         <div className="main-body-content">
 
@@ -344,6 +344,7 @@ export function CheckOutPage () {
             </div>
 
         </div>
+
     </>
     )
 }

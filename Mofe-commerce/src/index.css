@@ -30,3 +30,10 @@ header {
   justify-content: space-between;
 } 
 
+.vurno-logo {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 80px;
+}
+

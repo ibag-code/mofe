@@ -30,10 +30,10 @@ export function HomePage () {
 
 
 
-            <div 
+            <a
 
                 className="cart-icon-number" 
-                >
+                href='/checkout'>
 
 
 
@@ -42,7 +42,7 @@ export function HomePage () {
 
                 <p className="cart-number js-cart-number">0</p>
 
-            </div>
+            </a>
 
 
 
