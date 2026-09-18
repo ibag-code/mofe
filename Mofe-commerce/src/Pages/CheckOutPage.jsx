@@ -7,7 +7,6 @@ export function CheckOutPage () {
         
         <header>
 
-
             <div className="vurno-logo">
                 <img src="images/product/Vurno-logo.jpg" className="Vurno-logo" />
                 <a href="product-page.html"></a>
