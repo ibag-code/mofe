@@ -1,0 +1,337 @@
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #EFEFEF;
+}
+
+:root {
+    --header-colour: #111922;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: center;
+ width: 100%;
+ height: 80px;
+ background-color: black;
+ position: fixed;
+ padding: 10px 78px;
+ overflow: hidden;
+}
+
+.vurno-logo {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 80px;
+}
+
+.back-checkout {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    width: 100%;    
+    height: fit-content;
+    padding: 0px 78px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.back-checkout h3 {
+    font-family: "Geist";
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.back-checkout h3 span{
+    font-family: "Geist";
+    font-size: 20px;
+    font-weight: 600;
+    color: #3700C2;
+}
+
+.back-checkout a {
+    display: flex;
+    background-color: #E5E5E5;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    text-decoration: none;
+}
+
+.back-checkout a i {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.back-checkout a:hover{
+    background-color: black;
+    color: white;
+}
+
+.checkout {
+    margin: 0px 6px;
+}
+
+.dont-display {
+    opacity: 0;
+}
+
+.main-body-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    padding: 0px 78px;
+}
+
+.all-product {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.product-image-cotent {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    background-color: white;
+    border-radius: 12px;
+    width: 50vw;
+    padding: 10px;
+}
+
+
+.product-image {
+    display: flex;
+    height: 250px;
+    width: 280px;
+
+}
+
+.all-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.delivery-price-quantity {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 300px;
+}
+
+.delivery-price-quantity .tender-date {
+    font-family: "Geist";
+    font-size: 16px;
+    color: #3700C2;
+    font-weight: 500;
+}
+.delivery-price-quantity h5 {
+    font-family: "Geist";
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--header-colour);
+}
+.delivery-price-quantity h1 {
+    font-family: "Geist";
+    font-size: 32px;
+    font-weight: 700;
+}
+.delivery-price-quantity p {
+    font-family: "Geist";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.cancel-delivery-option {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: end;
+}
+
+
+.cancel-icon {
+    display: flex;
+    background-color: #E5E5E5;
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cancel-icon i {
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.cancel-icon:hover{
+    background-color: black;
+    color: white;
+}
+
+.delivery-option-and-header {
+    display: flex;
+     gap: 12px;
+    flex-direction: column;
+}
+.delivery-option-and-header p {
+    font-family: "Geist";
+    font-size: 16px;
+    font-weight: 600;
+   
+
+}
+
+.delivery-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.delivery-option {
+  display: flex;
+  align-items: top;
+  gap: 12px;
+  cursor: pointer;
+}
+
+
+/* Radio button */
+
+.delivery-option input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d5d5d5;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* Small circle inside */
+
+.delivery-option input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s;
+}
+
+.delivery-option input:checked {
+  border-color: green;
+}
+
+.delivery-option input:checked::before {
+  background-color: green;
+  transform: scale(1);
+}
+
+
+/* Delivery text */
+
+.delivery-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: fit-content;
+}
+
+
+.delivery-info h5 {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Geist";
+}
+
+.delivery-info p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6D6D6D;
+  font-family: "Geist";
+}
+
+
+/* Making selected text green */
+.delivery-option:has(input:checked) h5 {
+  color: green;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    gap: 24px;
+    border-radius: 24px;
+    width: 450px;
+    height: fit-content;
+}
+.order-summary div {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    border-radius: 24px;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+}
+.order-summary div p{
+    font-family: "Geist";
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.order-summary .Total h3 {
+    color: #3700C2;
+    font-family: "Geist";
+    font-size: 20px;
+}
+
+.summary-title {
+    font-family: "Geist";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.order-btn {
+    width: 100%;
+    height: 45px;
+    background-color: #40019e;
+    color: #ebedf0;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+}

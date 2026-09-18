@@ -1,10 +1,32 @@
-body {
-  margin: 0px;
-  font-family: Geist;
-}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #EFEFEF;
+  margin: 0px;
+  font-family: Geist;
+}
+
+:root {
+    --header-colour: #111922;
+}
+
+header {
+  background-color: #020203;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 80px;
+  align-items: center;
+  justify-content: space-between;
+} 
+

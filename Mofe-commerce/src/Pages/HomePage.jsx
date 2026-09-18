@@ -1,4 +1,4 @@
-import './HomePage.css';
+import './Homepage.css';
 
 
 
@@ -6,21 +6,25 @@ export function HomePage () {
     return (
         <>
         <header>
-            <div class="vurno-logo-div">
-                <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" class="vurno-logo" />
+
+            <div className="vurno-logo-div">
+
+                <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" className="vurno-logo" />
+
             </div>
 
 
             <div 
-                class="search-bar-and-input">
+
+                className="search-bar-and-input">
                 
-                        <input type="text" placeholder="Search" class="input-field" />
+                        <input type="text" placeholder="Search" className="input-field" />
 
-                        <button class="search-bar-icon">
+                    <button className="search-bar-icon">
 
-                            <i class="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
+                        <i className="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
 
-                        </button>
+                    </button>
 
             </div>
 
@@ -28,14 +32,15 @@ export function HomePage () {
 
             <div 
 
-                class="cart-icon-number" onclick="location.href='checkout-page.html'">
+                className="cart-icon-number" 
+                >
 
 
 
-                <i class="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
+                <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
 
 
-                <p class="cart-number js-cart-number">0</p>
+                <p className="cart-number js-cart-number">0</p>
 
             </div>
 
@@ -45,32 +50,32 @@ export function HomePage () {
 
         <main className="main-content-product js-product-grid">
 
-            <div class="product-image-content">
+            <div className="product-image-content">
 
-                <div class="product-image-div">
-                    <img src="images/product/socks.jpg" alt="productimage" class="product-image-div" />
+                <div className="product-image-div">
+                    <img src="images/product/socks.jpg" alt="productimage" className="product-image-div" />
                 </div>
 
-                <div class="product-content">
-                    <p class="product-name">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+                <div className="product-content">
+                    <p className="product-name">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
 
-                    <div class="rating-added-cart">
+                    <div className="rating-added-cart">
                         
-                        <div class="rating-and-count">
-                            <img src="images/ratings/Rating 4.5.svg" alt="rating4.5" class="rating-star" />
-                            <p class="rating-count">87</p>
+                        <div className="rating-and-count">
+                            <img src="images/ratings/Rating 4.5.svg" alt="rating4.5" className="rating-star" />
+                            <p className="rating-count">87</p>
                         </div>
 
 
 
-                        <div class="added-to-cart"> Added </div>
+                        <div className="added-to-cart"> Added </div>
                     </div>
 
 
-                    <div class="price-picker">
-                        <p class="pricing">$6.99</p>
+                    <div className="price-picker">
+                        <p className="pricing">$6.99</p>
 
-                        <select class="product-quantity">
+                        <select className="product-quantity">
                             <img src="images/icons/dropsoun-Vector.svg" alt="icon" />
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -87,7 +92,7 @@ export function HomePage () {
 
                 </div>
 
-                <button class="call-to-action"> Add to cart</button>
+                <button className="call-to-action"> Add to cart</button>
             </div>
 
 

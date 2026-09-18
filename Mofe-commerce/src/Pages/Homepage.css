@@ -1,17 +1,6 @@
 
-header {
-  background-color: #020203;
-  height: 80px;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  padding: 20px 80px;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.amazon-logo-div,.vurno-logo {
+.vurno-logo {
   width: 130px;
   height: 80px;
   object-fit: contain;
@@ -35,7 +24,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 0px;
+  gap: 0px; 
 }
 
 .input-field {
