@@ -1,3 +1,4 @@
+import { Header } from '../components/Header';
 import './CheckOutPage.css';
 
 export function CheckOutPage () {
@@ -5,14 +6,7 @@ export function CheckOutPage () {
 
         <>
             
-            <header>
-
-                <a className="vurno-logo" href='/'>
-                    <img src="images/product/Vurno-logo.jpg" className="Vurno-logo" />
-                </a>
-
-
-            </header>
+            <Header />
 
             <div className="back-checkout">
 
@@ -339,7 +333,7 @@ export function CheckOutPage () {
                     </div>
 
 
-                    <a className="order-btn"
+                    <a className="order-btn call-to-action"
                     href='./order'
                     > Place Order</a>
 

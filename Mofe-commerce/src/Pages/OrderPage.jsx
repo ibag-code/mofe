@@ -1,47 +1,11 @@
+import { Header } from '../components/Header'
 import './OrderPage.css';
 
 
 export function Orderpage () {
     return (
         <>
-            <header>
-                <a className="vurno-logo-div" href="/">
-                    
-                    <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" className="vurno-logo" />
-                </a>
-
-
-                <div 
-                    className="search-bar-and-input">
-                    
-                            <input type="text" placeholder="Search" className="input-field" />
-
-                            <button className="search-bar-icon">
-
-                                <i className="hgi hgi-stroke hgi-rounded hgi-search-01 search-icon" ></i>
-
-                            </button>
-
-                </div>
-
-
-
-                <div 
-
-                    className="cart-icon-number" onclick="location.href='checkout-page.html'">
-
-
-
-                    <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
-
-
-                    <p className="cart-number js-cart-number">0</p>
-
-                </div>
-
-
-
-            </header>
+            <Header />
             
             <div className="orders-page">
 
@@ -92,7 +56,7 @@ export function Orderpage () {
                         </div>
 
 
-                        <button className="call-to-action">
+                        <button className="order-call-to-action">
 
                         
                         <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02
@@ -133,7 +97,7 @@ export function Orderpage () {
                         Quantity: 2
                         </div>
 
-                        <button className="call-to-action">
+                        <button className="order-call-to-action">
 
                         
                         <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02
@@ -195,7 +159,7 @@ export function Orderpage () {
                         </div>
 
 
-                        <button className="call-to-action">
+                        <button className="order-call-to-action">
 
                         
                         <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02

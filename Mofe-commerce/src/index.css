@@ -37,3 +37,21 @@ header {
     width: 80px;
 }
 
+.call-to-action {
+  width: 100%;
+  height: 45px;
+  background-color: #40019e;
+  color: #ebedf0;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+}
+
+.call-to-action:hover {
+  background-color: rgb(106, 82, 146);
+  color: #Ffffff;
+  cursor: pointer;
+}
+

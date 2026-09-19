@@ -190,7 +190,7 @@
   opacity: 1; /* shows when JS adds this class */
 }
 
-.call-to-action {
+/* .call-to-action {
   width: 100%;
   height: 45px;
   background-color: #40019e;
@@ -206,7 +206,7 @@
   background-color: rgb(106, 82, 146);
   color: #Ffffff;
   cursor: pointer;
-}
+} */
 
 
 /* ---------------------
@@ -348,10 +348,10 @@
   height: 28px;
 }
 
-.call-to-action {
+/* .call-to-action {
   height: 38px;
   font-size: 14px;
-}
+} */
 
 }
 
@@ -476,10 +476,10 @@
   height: 28px;
 }
 
-.call-to-action {
+/* .call-to-action {
   height: 38px;
   font-size: 14px;
-}
+} */
 
 }
 
@@ -609,10 +609,4 @@
   width: 50px;
   height: 28px;
 }
-
-.call-to-action {
-  height: 38px;
-  font-size: 12px;
-}
-
 }
