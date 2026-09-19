@@ -100,7 +100,13 @@
     gap: 12px;
     width: 300px;
 }
-
+.order-btn {
+    background-color: #3700C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 .delivery-price-quantity .tender-date {
     font-family: "Geist";
     font-size: 16px;

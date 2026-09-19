@@ -5,9 +5,10 @@ export function Orderpage () {
     return (
         <>
             <header>
-                <div className="vurno-logo-div">
+                <a className="vurno-logo-div" href="/">
+                    
                     <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" className="vurno-logo" />
-                </div>
+                </a>
 
 
                 <div 
