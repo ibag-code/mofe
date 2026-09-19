@@ -19,6 +19,7 @@ header {
   padding: 20px 80px;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .amazon-logo-div,.vurno-logo {
