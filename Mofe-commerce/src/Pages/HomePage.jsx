@@ -1,4 +1,4 @@
-import { }
+import { ProductData } from '../Data/ProductData.jsx'
 import './HomePage.css';
 
 
@@ -51,6 +51,68 @@ export function HomePage () {
 
         <main className="main-content-product js-product-grid">
 
+            {ProductData.map( (data) => {
+                return (
+                    
+                <div 
+                    key={ data.id }                    className="product-image-content"
+                >
+
+                    <div className="product-image-div">
+                        <img src={data.image} className="product-image-div" />
+                    </div>
+
+                    <div className="product-content">
+                        <p className="product-name">{data.productName}</p>
+
+                        <div className="rating-added-cart">
+                            
+                            <div className="rating-and-count">
+                                <img src={
+                                    `images/ratings/Rating ${data.rating.stars}.svg
+                                    `} 
+
+                                    alt="rating4.5" 
+                                    
+                                    className="rating-star" />
+                                <p className="rating-count">{data.rating.ratingNumber} </p>
+                            </div>
+
+
+
+                            <div className="added-to-cart"> Added </div>
+                        </div>
+
+
+                        <div className="price-picker">
+                            <p className="pricing">${(data.pricing /100). toFixed(2)}</p>
+
+                            <select className="product-quantity"> 
+                                <img src="images/icons/dropsoun-Vector.svg" alt="icon" />
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button className="call-to-action"> Add to cart</button>
+                </div>
+                   
+                    
+                )
+            })}
+
+            
+{/* 
             <div className="product-image-content">
 
                 <div className="product-image-div">
@@ -363,7 +425,7 @@ export function HomePage () {
                 </div>
 
                 <button className="call-to-action"> Add to cart</button>
-            </div>
+            </div> */}
             
         </main>
         </>

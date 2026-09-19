@@ -1,4 +1,4 @@
- export const productInfo = [{
+ export const ProductData = [{
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image:  "images/product/socks.jpg",
     productName: "Black and Gray Athletic Cotton Socks - 6 Pairs",
