@@ -1,4 +1,4 @@
-import { Header } from '../components/Header';
+import { Checkoutheader } from '../components/Header';
 import './CheckOutPage.css';
 
 export function CheckOutPage () {
@@ -6,7 +6,7 @@ export function CheckOutPage () {
 
         <>
             
-            <Header />
+            <Checkoutheader />
 
             <div className="back-checkout">
 
