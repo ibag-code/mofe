@@ -1,4 +1,4 @@
-import { ProductData } from '../Data/ProductData.jsx'
+import { ProductData } from '../Data/data.jsx'
 import './HomePage.css';
 
 
