@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { ProductData } from '../Data/data.jsx'
 import './HomePage.css';
 
@@ -6,11 +7,23 @@ import './HomePage.css';
 
 export function HomePage () {
 
-    //Simplest way to fetch data from the Back end
-     axios.get ("http://localhost:3000/api/products")
-        .then((response) => {
-                console.log(response.data)
+    const [ProductData, setProductData] = useState([])
+
+    
+    useEffect(() => {
+        axios.get ("http://localhost:3000/api/products")
+            .then((response) => {
+                    setProductData(response.data)
         })
+
+
+        axios.get('http://localhost:3000/api/cart-items')
+        
+    }, [])
+
+     
+    //Simplest way to fetch data from the Back end
+
 
         //ways to use fetch method
     //  fetch("http://localhost:3000/api/products")
@@ -87,23 +100,27 @@ export function HomePage () {
                 >
 
                     <div className="product-image-div">
-                        <img src={data.image} className="product-image-div" />
+                        <img src={`http://localhost:3000/${data.image}`} 
+                        // {data.image} 
+                             className="product-image-div" 
+                        />
                     </div>
 
                     <div className="product-content">
-                        <p className="product-name">{data.productName}</p>
+                        <p className="product-name">{data.name}</p>
 
                         <div className="rating-added-cart">
                             
                             <div className="rating-and-count">
-                                <img src={
-                                    `images/ratings/Rating ${data.rating.stars}.svg
-                                    `} 
+                                <img 
+                                    src=
+
+                                    {`http://localhost:3000/images/ratings/rating-${(data.rating.stars) * 10}.png`}
 
                                     alt="rating4.5" 
-                                    
-                                    className="rating-star" />
-                                <p className="rating-count">{data.rating.ratingNumber} </p>
+                                    className="rating-star" 
+                                />
+                                <p className="rating-count">{data.rating.count} </p>
                             </div>
 
 
@@ -113,7 +130,7 @@ export function HomePage () {
 
 
                         <div className="price-picker">
-                            <p className="pricing">${(data.pricing /100). toFixed(2)}</p>
+                            <p className="pricing">${(data.priceCents /100). toFixed(2)}</p>
 
                             <select className="product-quantity"> 
                                 <img src="images/icons/dropsoun-Vector.svg" alt="icon" />
