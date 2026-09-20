@@ -8,17 +8,21 @@ import './HomePage.css';
 export function HomePage () {
 
     const [ProductData, setProductData] = useState([])
+    const [cart, setCart] = useState([])
 
     
     useEffect(() => {
+
         axios.get ("http://localhost:3000/api/products")
             .then((response) => {
                     setProductData(response.data)
         })
 
 
-        axios.get('http://localhost:3000/api/cart-items')
-        
+        axios.get('http://localhost:3000/api/cart-items').then((response) => {
+            setCart(response.data)
+        })
+
     }, [])
 
      
@@ -43,6 +47,12 @@ export function HomePage () {
     //             console.log(productdata)
     //     })
 
+    let totalQuantity = 0;
+    // console.log(cart)
+    cart.forEach((cartList)=> {
+        // console.log(cartList)
+        totalQuantity = totalQuantity + cartList.quantity
+    })
 
 
     return (
@@ -82,7 +92,7 @@ export function HomePage () {
                 <i className="hgi hgi-stroke hgi-rounded hgi-shopping-cart-02 cart-icon"></i>
 
 
-                <p className="cart-number js-cart-number">0</p>
+                <p className="cart-number js-cart-number">{totalQuantity}</p>
 
             </a>
 
