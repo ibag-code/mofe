@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { ProductData } from '../Data/data.jsx'
 import './HomePage.css';
 
@@ -5,12 +6,21 @@ import './HomePage.css';
 
 export function HomePage () {
 
-     fetch("http://localhost:3000/api/products")
+    //Simplest way to fetch data from the Back end
+     axios.get ("http://localhost:3000/api/products")
         .then((response) => {
-            response.json().then((productdata) => {
-                console.log(productdata)
-            })
+                console.log(response.data)
         })
+
+        //ways to use fetch method
+    //  fetch("http://localhost:3000/api/products")
+    //     .then((response) => {
+    //         response.json().then((productdata) => {
+    //             console.log(productdata)
+    //         })
+    //     })
+
+
 
         //Shortcut for fetching data
     //  fetch("http://localhost:3000/api/products")
@@ -19,6 +29,8 @@ export function HomePage () {
     //     }).then((productdata) => {
     //             console.log(productdata)
     //     })
+
+
 
     return (
         <>
