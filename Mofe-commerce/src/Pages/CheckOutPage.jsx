@@ -4,6 +4,8 @@ import './CheckOutPage.css';
 export function CheckOutPage () {
     return (
 
+
+
         <>
             
             <Checkoutheader />

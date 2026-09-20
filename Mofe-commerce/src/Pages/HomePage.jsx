@@ -1,14 +1,16 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { ProductData } from '../Data/data.jsx'
-import './HomePage.css';
+// import { ProductData } from '../Data/data.jsx'
+import './HomePage.css'; 
 
 
 
-export function HomePage () {
+export function HomePage ( {cart}) {
 
-    const [ProductData, setProductData] = useState([])
-    const [cart, setCart] = useState([])
+    const [ProductData, setProductData] = useState([]) 
+
+    //Lifting for global access
+    // const [cart, setCart] = useState([])
 
     
     useEffect(() => {
@@ -19,9 +21,9 @@ export function HomePage () {
         })
 
 
-        axios.get('http://localhost:3000/api/cart-items').then((response) => {
-            setCart(response.data)
-        })
+        // axios.get('http://localhost:3000/api/cart-items').then((response) => {
+        //     setCart(response.data)
+        // })
 
     }, [])
 
