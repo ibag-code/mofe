@@ -9,7 +9,7 @@ export function Orderpage () {
             
             <div className="orders-page">
 
-                <div className="page-title">Your Orders</div>
+                <div classNamel  ="page-title">Your Orders</div>
 
                 <div className="orders-grid">
 
