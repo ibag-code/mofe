@@ -111,7 +111,9 @@ export function HomePage () {
                 )
             })}
 
-            
+
+ 
+               
 {/* 
             <div className="product-image-content">
 
