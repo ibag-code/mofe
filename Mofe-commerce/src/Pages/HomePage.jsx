@@ -1,4 +1,5 @@
 import axios from 'axios';
+import formatCurrency from '../utiles/funds'
 import { useEffect, useState } from 'react';
 // import { ProductData } from '../Data/data.jsx'
 import './HomePage.css'; 
@@ -142,7 +143,9 @@ export function HomePage ( {cart}) {
 
 
                         <div className="price-picker">
-                            <p className="pricing">${(data.priceCents /100). toFixed(2)}</p>
+                            <p className="pricing">
+                            {formatCurrency(data.priceCents)}
+                            </p>
 
                             <select className="product-quantity"> 
                                 <img src="images/icons/dropsoun-Vector.svg" alt="icon" />
