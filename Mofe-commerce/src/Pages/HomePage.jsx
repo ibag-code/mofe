@@ -6,7 +6,7 @@ import './HomePage.css';
 
 
 
-export function HomePage ( {cart}) {
+export function HomePage ( { totalQuantity}) {
 
     const [ProductData, setProductData] = useState([]) 
 
@@ -50,12 +50,12 @@ export function HomePage ( {cart}) {
     //             console.log(productdata)
     //     })
 
-    let totalQuantity = 0;
-    // console.log(cart)
-    cart.forEach((cartList)=> {
-        // console.log(cartList)
-        totalQuantity = totalQuantity + cartList.quantity
-    })
+    // let totalQuantity = 0;
+    // // console.log(cart)
+    // cart.forEach((cartList)=> {
+    //     // console.log(cartList)
+    //     totalQuantity = totalQuantity + cartList.quantity
+    // })
 
 
     return (

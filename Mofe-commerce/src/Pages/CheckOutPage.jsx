@@ -5,7 +5,8 @@ import formatCurrency from "../utiles/funds";
 import { Checkoutheader } from "../components/Header";
 import "./CheckOutPage.css";
 
-export function CheckOutPage({ cart }) {
+export function CheckOutPage({ cart, totalQuantity}) {
+    console.log(totalQuantity)
   const [deliveryOption, setDeliveryOption] = useState([]);
 
   const [paymentSummary, setPaymentSummary] = useState(null);
@@ -34,8 +35,12 @@ export function CheckOutPage({ cart }) {
           <i className="hgi hgi-stroke hgi-rounded hgi-arrow-left-01"></i>
         </a>
 
+
         <h3>
-          Checkout (<span className="checkout">0</span>item)
+          Checkout 
+          (<span className="checkout">
+            {totalQuantity}
+        </span>item)
         </h3>
 
         <h3 className="dont-display">
