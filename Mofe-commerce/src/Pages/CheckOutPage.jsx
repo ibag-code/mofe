@@ -22,9 +22,8 @@ export function CheckOutPage({ cart, totalQuantity}) {
 
     axios.get("http://localhost:3000/api/payment-summary").then((response) => {
       setPaymentSummary(response.data);
-      alert(paymentSummary.totalItems);
     });
-  }, []);
+  },[]);
 
   return (
     <>
