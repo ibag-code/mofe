@@ -13,9 +13,11 @@ function App() {
 
     useEffect ( ()=> {
         axios.get('http://localhost:3000/api/cart-items?expand=product').then((response) => {
+
         setCart(response.data)
-      })
-    })
+        
+      });
+    },[]);
 
 
 
