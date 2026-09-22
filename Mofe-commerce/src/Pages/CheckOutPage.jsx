@@ -12,9 +12,11 @@ export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
   const [paymentSummary, setPaymentSummary] = useState(null);
 
   const reloadPayment = async () => {
-     const response = await axios.get("http://localhost:3000/api/payment-summary");
-     
-      setPaymentSummary(response.data);
+    const response = await axios.get(
+      "http://localhost:3000/api/payment-summary",
+    );
+
+    setPaymentSummary(response.data);
   };
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
         setDeliveryOption(response.data);
       });
 
-      reloadPayment()
+    reloadPayment();
   }, []);
 
   return (
@@ -58,6 +60,14 @@ export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
               );
               // console.log(selectedDeliveryOption)
 
+              const deleteCart = async () => {
+                await axios.delete(
+                  `http://localhost:3000/api/cart-items/${cartItem.productId}`,
+                );
+
+                await fetchCart();
+              };
+
               return (
                 <div key={cartItem.productId} className="product-image-cotent">
                   <div className="product-image">
@@ -88,7 +98,7 @@ export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
                     </div>
 
                     <div className="cancel-delivery-option">
-                      <div className="cancel-icon">
+                      <div className="cancel-icon" onClick={deleteCart}>
                         <i className="hgi hgi-stroke hgi-rounded hgi-cancel-01"></i>
                       </div>
 
@@ -113,7 +123,7 @@ export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
                                 },
                               );
                               await fetchCart();
-                              reloadPayment()
+                              reloadPayment();
                             };
 
                             return (
