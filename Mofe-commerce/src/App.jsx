@@ -7,7 +7,6 @@ import { Orderpage } from "./Pages/OrderPage";
 import { useEffect, useState } from "react";
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   const [cart, setCart] = useState([]);
 

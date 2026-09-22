@@ -20,42 +20,9 @@ export function HomePage ( { totalQuantity}) {
                     setProductData(response.data)
         })
 
-
-        // axios.get('http://localhost:3000/api/cart-items').then((response) => {
-        //     setCart(response.data)
-        // })
-
     }, [])
 
-     
-    //Simplest way to fetch data from the Back end
-
-
-        //ways to use fetch method
-    //  fetch("http://localhost:3000/api/products")
-    //     .then((response) => {
-    //         response.json().then((productdata) => {
-    //             console.log(productdata)
-    //         })
-    //     })
-
-
-
-        //Shortcut for fetching data
-    //  fetch("http://localhost:3000/api/products")
-    //     .then((response) => {
-    //         return response.json()
-    //     }).then((productdata) => {
-    //             console.log(productdata)
-    //     })
-
-    // let totalQuantity = 0;
-    // // console.log(cart)
-    // cart.forEach((cartList)=> {
-    //     // console.log(cartList)
-    //     totalQuantity = totalQuantity + cartList.quantity
-    // })
-
+    
 
     return (
         <>
