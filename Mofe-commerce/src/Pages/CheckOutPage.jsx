@@ -5,11 +5,17 @@ import formatCurrency from "../utiles/funds";
 import { Checkoutheader } from "../components/Header";
 import "./CheckOutPage.css";
 
-export function CheckOutPage({ cart, totalQuantity}) {
-    console.log(totalQuantity)
+export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
+  // console.log(totalQuantity);
   const [deliveryOption, setDeliveryOption] = useState([]);
 
   const [paymentSummary, setPaymentSummary] = useState(null);
+
+  const reloadPayment = async () => {
+     const response = await axios.get("http://localhost:3000/api/payment-summary");
+     
+      setPaymentSummary(response.data);
+  };
 
   useEffect(() => {
     axios
@@ -20,10 +26,8 @@ export function CheckOutPage({ cart, totalQuantity}) {
         setDeliveryOption(response.data);
       });
 
-    axios.get("http://localhost:3000/api/payment-summary").then((response) => {
-      setPaymentSummary(response.data);
-    });
-  },[]);
+      reloadPayment()
+  }, []);
 
   return (
     <>
@@ -34,12 +38,8 @@ export function CheckOutPage({ cart, totalQuantity}) {
           <i className="hgi hgi-stroke hgi-rounded hgi-arrow-left-01"></i>
         </a>
 
-
         <h3>
-          Checkout 
-          (<span className="checkout">
-            {totalQuantity}
-        </span>item)
+          Checkout (<span className="checkout">{totalQuantity}</span>item)
         </h3>
 
         <h3 className="dont-display">
@@ -48,7 +48,6 @@ export function CheckOutPage({ cart, totalQuantity}) {
       </div>
 
       <div className="main-body-content">
-        
         <div className="all-product">
           {deliveryOption.length > 0 &&
             cart.map((cartItem) => {
@@ -57,6 +56,7 @@ export function CheckOutPage({ cart, totalQuantity}) {
                   return deliverOption.id === cartItem.deliveryOptionId;
                 },
               );
+              // console.log(selectedDeliveryOption)
 
               return (
                 <div key={cartItem.productId} className="product-image-cotent">
@@ -72,7 +72,7 @@ export function CheckOutPage({ cart, totalQuantity}) {
                   <div className="all-content">
                     <div className="delivery-price-quantity">
                       <p className="tender-date">
-                        Delivery date:{" "}
+                        Delivery date:
                         {dayjs(
                           selectedDeliveryOption.estimatedDeliveryTimeMs,
                         ).format("dddd, MMMM D")}
@@ -102,10 +102,25 @@ export function CheckOutPage({ cart, totalQuantity}) {
                             if (deliverOption.priceCents > 0) {
                               priceString = `${formatCurrency(deliverOption.priceCents)} - Shipping `;
                             }
+
+                            //Updating the Deliver Option
+
+                            const updDeliverOpt = async () => {
+                              await axios.put(
+                                `http://localhost:3000/api/cart-items/${cartItem.productId}`,
+                                {
+                                  deliveryOptionId: deliverOption.id,
+                                },
+                              );
+                              await fetchCart();
+                              reloadPayment()
+                            };
+
                             return (
                               <label
                                 key={deliverOption.id}
                                 className="delivery-option"
+                                onClick={updDeliverOpt}
                               >
                                 <input
                                   type="radio"
@@ -114,6 +129,7 @@ export function CheckOutPage({ cart, totalQuantity}) {
                                     deliverOption.id ===
                                     cartItem.deliveryOptionId
                                   }
+                                  onChange={() => {}}
                                 />
 
                                 <div className="delivery-info">
@@ -127,33 +143,6 @@ export function CheckOutPage({ cart, totalQuantity}) {
                               </label>
                             );
                           })}
-
-                          {/* <label className="delivery-option">
-                          <input type="radio" name="delivery" checked />
-
-                          <div className="delivery-info">
-                            <h5>Monday, May 8</h5>
-                            <p>Free Shipping</p>
-                          </div>
-                        </label>
-
-                        <label className="delivery-option">
-                          <input type="radio" name="delivery" />
-
-                          <div className="delivery-info">
-                            <h5>Tuesday, May 2</h5>
-                            <p>$4.99 - Shipping</p>
-                          </div>
-                        </label>
-
-                        <label className="delivery-option">
-                          <input type="radio" name="delivery" />
-
-                          <div className="delivery-info">
-                            <h5>Friday, April 28</h5>
-                            <p>$9.99 - Shipping</p>
-                          </div>
-                        </label> */}
                         </div>
                       </div>
                     </div>
@@ -161,225 +150,6 @@ export function CheckOutPage({ cart, totalQuantity}) {
                 </div>
               );
             })}
-
-          {/* <div className="product-image-cotent">
-            <div className="product-image">
-              <img
-                src="images/product/socks.jpg"
-                alt=""
-                className="product-image"
-              />
-            </div>
-
-            <div className="all-content">
-              <div className="delivery-price-quantity">
-                <p className="tender-date">Delivery date: Monday, May 8</p>
-
-                <h5>Black and Gray Athletic Cotton Socks - 6 Pairs</h5>
-
-                <h1>$6.99</h1>
-
-                <p>
-                  Quantity <span>1</span>
-                </p>
-              </div>
-
-              <div className="cancel-delivery-option">
-                <div className="cancel-icon">
-                  <i className="hgi hgi-stroke hgi-rounded hgi-cancel-01"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-image-cotent">
-            <div className="product-image">
-              <img
-                src="images/product/bakeware.jpg"
-                alt=""
-                className="product-image"
-              />
-            </div>
-
-            <div className="all-content">
-              <div className="delivery-price-quantity">
-                <p className="tender-date">Delivery date: Monday, May 8</p>
-
-                <h5>6-Piece Non-Stick, Carbon Steal Oven Bakeware</h5>
-
-                <h1>$6.99</h1>
-
-                <p>
-                  Quantity <span>1</span>
-                </p>
-              </div>
-
-              <div className="cancel-delivery-option">
-                <div className="cancel-icon">
-                  <i className="hgi hgi-stroke hgi-rounded hgi-cancel-01"></i>
-                </div>
-
-                <div className="delivery-option-and-header">
-                  <p>Choose Delivery Option:</p>
-
-                  <div className="delivery-options">
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" checked />
-
-                      <div className="delivery-info">
-                        <h5>Monday, May 8</h5>
-                        <p>Free Shipping</p>
-                      </div>
-                    </label>
-
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" />
-
-                      <div className="delivery-info">
-                        <h5>Tuesday, May 2</h5>
-                        <p>$4.99 - Shipping</p>
-                      </div>
-                    </label>
-
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" />
-
-                      <div className="delivery-info">
-                        <h5>Friday, April 28</h5>
-                        <p>$9.99 - Shipping</p>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-image-cotent">
-            <div className="product-image">
-              <img
-                src="images/product/toaster.jpg"
-                alt=""
-                className="product-image"
-              />
-            </div>
-
-            <div className="all-content">
-              <div className="delivery-price-quantity">
-                <p className="tender-date">Delivery date: Monday, May 8</p>
-
-                <h5>2 slot Toaster - Black</h5>
-
-                <h1>$6.99</h1>
-
-                <p>
-                  Quantity <span>1</span>
-                </p>
-              </div>
-
-              <div className="cancel-delivery-option">
-                <div className="cancel-icon">
-                  <i className="hgi hgi-stroke hgi-rounded hgi-cancel-01"></i>
-                </div>
-
-                <div className="delivery-option-and-header">
-                  <p>Choose Delivery Option:</p>
-
-                  <div className="delivery-options">
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" checked />
-
-                      <div className="delivery-info">
-                        <h5>Monday, May 8</h5>
-                        <p>Free Shipping</p>
-                      </div>
-                    </label>
-
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" />
-
-                      <div className="delivery-info">
-                        <h5>Tuesday, May 2</h5>
-                        <p>$4.99 - Shipping</p>
-                      </div>
-                    </label>
-
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" />
-
-                      <div className="delivery-info">
-                        <h5>Friday, April 28</h5>
-                        <p>$9.99 - Shipping</p>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="product-image-cotent">
-            <div className="product-image">
-              <img
-                src="images/product/tshirt.jpg"
-                alt=""
-                className="product-image"
-              />
-            </div>
-
-            <div className="all-content">
-              <div className="delivery-price-quantity">
-                <p className="tender-date">Delivery date: Monday, May 8</p>
-
-                <h5>Adult Plain Cotton T-shirt </h5>
-
-                <h1>$6.99</h1>
-
-                <p>
-                  Quantity <span>1</span>
-                </p>
-              </div>
-
-              <div className="cancel-delivery-option">
-                <div className="cancel-icon">
-                  <i className="hgi hgi-stroke hgi-rounded hgi-cancel-01"></i>
-                </div>
-
-                <div className="delivery-option-and-header">
-                  <p>Choose Delivery Option:</p>
-
-                  <div className="delivery-options">
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" checked />
-
-                      <div className="delivery-info">
-                        <h5>Monday, May 8</h5>
-                        <p>Free Shipping</p>
-                      </div>
-                    </label>
-
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" />
-
-                      <div className="delivery-info">
-                        <h5>Tuesday, May 2</h5>
-                        <p>$4.99 - Shipping</p>
-                      </div>
-                    </label>
-
-                    <label className="delivery-option">
-                      <input type="radio" name="delivery" />
-
-                      <div className="delivery-info">
-                        <h5>Friday, April 28</h5>
-                        <p>$9.99 - Shipping</p>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <div className="order-summary">
