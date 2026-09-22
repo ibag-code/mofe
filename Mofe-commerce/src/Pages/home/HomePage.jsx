@@ -5,7 +5,7 @@ import './HomePage.css';
 
 
 
-export function HomePage ( { totalQuantity}) {
+export function HomePage ( { totalQuantity, fetchCart}) {
 
     const [ProductData, setProductData] = useState([]) 
 
@@ -16,8 +16,8 @@ export function HomePage ( { totalQuantity}) {
     useEffect(() => {
 
         axios.get ("http://localhost:3000/api/products")
-            .then((response) => {
-                    setProductData(response.data)
+            .then((response) => { 
+                setProductData(response.data)
         })
 
     }, [])
@@ -69,7 +69,7 @@ export function HomePage ( { totalQuantity}) {
 
         </header>
 
-        <ProductGrid ProductData={ProductData} />
+        <ProductGrid ProductData={ProductData} fetchCart={fetchCart} />
 
 
         </>
