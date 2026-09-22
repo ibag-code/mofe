@@ -54,7 +54,7 @@ export function Orderpage() {
                         <Fragment key={OrderProduct.product.id} >
                           <div className="product-image-container">
                             <img src=
-                            {`http://localhost:3000/${OrderProduct.product.image}`}
+                            {`http://localhost:3000/${OrderProduct.product.image}`}                             
                             />
                           </div>
 

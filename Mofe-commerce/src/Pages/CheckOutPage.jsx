@@ -48,6 +48,7 @@ export function CheckOutPage({ cart, totalQuantity}) {
       </div>
 
       <div className="main-body-content">
+        
         <div className="all-product">
           {deliveryOption.length > 0 &&
             cart.map((cartItem) => {
