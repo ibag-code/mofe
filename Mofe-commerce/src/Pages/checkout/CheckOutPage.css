@@ -74,7 +74,7 @@
     gap: 10px;
     background-color: white;
     border-radius: 12px;
-    width: 50vw;
+    width: fit-content;
     padding: 10px;
 }
 
@@ -115,8 +115,8 @@
 }
 .delivery-price-quantity h5 {
     font-family: "Geist";
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
     color: var(--header-colour);
 }
 .delivery-price-quantity h1 {
@@ -126,7 +126,7 @@
 }
 .delivery-price-quantity p {
     font-family: "Geist";
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 

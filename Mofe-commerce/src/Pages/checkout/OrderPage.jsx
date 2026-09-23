@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Checkoutheader } from "../components/Header";
-import formatCurrency from "../utiles/funds";
+import { Checkoutheader } from "../../components/Header";
+import formatCurrency from "../../utiles/funds";
 import "./OrderPage.css";
 import { useState, useEffect, Fragment } from "react";
 import dayjs from "dayjs";
@@ -20,6 +20,7 @@ export function Orderpage() {
       <Checkoutheader />
 
       <div className="orders-page">
+
         <div className="page-title">Your Orders</div>
 
         <div className="orders-grid">
@@ -93,12 +94,15 @@ export function Orderpage() {
                     })}
 
                   </div>
+
+                  
                 </div>
               
             );
           })}
 
         </div>
+
       </div>
     </>
   );
