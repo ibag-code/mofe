@@ -82,47 +82,46 @@ export function CheckOutPage({ cart, totalQuantity, fetchCart }) {
                   </div>
 
                   <div className="all-content">
-                    <div className="delivery-price-quantity">
-                      <p className="tender-date">
-                        Delivery date: <span></span>
-                        {dayjs(
-                          selectedDeliveryOption.estimatedDeliveryTimeMs,
-                        ).format('ddd, MMM D')}
-                      </p>
+                    <div className="product-content-cancel-icon">
 
-                      <h5>{cartItem.product.name}</h5>
+                      <div className="delivery-price-quantity">
+                        <p className="tender-date">
+                          Delivery date: <span></span>
+                          {dayjs(
+                            selectedDeliveryOption.estimatedDeliveryTimeMs,
+                          ).format("ddd, MMM D")}
+                        </p>
 
-                      <h2>{formatCurrency(cartItem.product.priceCents)}</h2>
+                        <h5>{cartItem.product.name}</h5>
 
-                      <p>
-                        Quantity: <span>{cartItem.quantity}</span>
-                      </p>
-                    </div>
+                        <h2>{formatCurrency(cartItem.product.priceCents)}</h2>
 
-                    <div className="cancel-delivery-option">
+                        <p>
+                          Quantity: <span>{cartItem.quantity}</span>
+                        </p>
+                      </div>
+
                       <div className="cancel-icon" onClick={deleteCart}>
                         <i className="hgi hgi-stroke hgi-rounded hgi-cancel-01"></i>
                       </div>
 
+                    </div>
+
+                    
                       <DeliveryOptionClick
                         cartItem={cartItem}
                         fetchCart={fetchCart}
                         deliveryOption={deliveryOption}
                         reloadPayment={reloadPayment}
                       />
-
-                    </div>
+                  
                   </div>
                 </div>
               );
             })}
         </div>
 
-
-        <OrderSummary paymentSummary={paymentSummary}/>
-
-
-
+        <OrderSummary paymentSummary={paymentSummary} />
       </div>
     </>
   );

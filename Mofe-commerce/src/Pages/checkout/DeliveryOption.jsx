@@ -5,7 +5,8 @@ import formatCurrency from "../../utiles/funds";
 export function DeliveryOptionClick( {cartItem, fetchCart, deliveryOption, reloadPayment }) {
   return (
     <div className="delivery-option-and-header">
-      <p>Choose Delivery Option:</p>
+
+      <p className="price-string-head">Choose Delivery Option:</p>
 
       <div className="delivery-options">
         {deliveryOption.map((deliverOption) => {
@@ -44,10 +45,10 @@ export function DeliveryOptionClick( {cartItem, fetchCart, deliveryOption, reloa
               <div className="delivery-info">
                 <h5>
                   {dayjs(deliverOption.estimatedDeliveryTimeMs).format(
-                    "dddd, MMMM D",
+                    "dddd, MMM D",
                   )}
                 </h5>
-                <p>{priceString}</p>
+                <p className="price-string">{priceString}</p>
               </div>
             </label>
           );
