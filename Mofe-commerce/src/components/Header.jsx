@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import logo from '../assets/logo.jpg'
 
 export  function Checkoutheader () {
     return (
@@ -7,7 +8,7 @@ export  function Checkoutheader () {
 
                 <Link className="vurno-logo" to='/'>
 
-                    <img src="/product/Vurno-logo.jpg" className="Vurno-logo" />
+                    <img src={logo} className="Vurno-logo" />
                     
                 </Link>
 
