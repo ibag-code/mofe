@@ -20,7 +20,7 @@ export function DeliveryOptionClick( {cartItem, fetchCart, deliveryOption, reloa
 
           const updDeliverOpt = async () => {
             await axios.put(
-              `http://localhost:3000/api/cart-items/${cartItem.productId}`,
+              `/api/cart-items/${cartItem.productId}`,
               {
                 deliveryOptionId: deliverOption.id,
               },

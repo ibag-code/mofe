@@ -15,7 +15,7 @@ export function HomePage ( { totalQuantity, fetchCart}) {
     
     useEffect(() => {
 
-        axios.get ("http://localhost:3000/api/products")
+        axios.get ("/api/products")
             .then((response) => { 
                 setProductData(response.data)
         })
@@ -30,7 +30,7 @@ export function HomePage ( { totalQuantity, fetchCart}) {
 
             <div className="vurno-logo-div">
 
-                <img src="images/product/Vurno-logo.jpg" alt="Mofe-logo" className="vurno-logo" />
+                <img src="/Vurno-logo.jpg" alt="Mofe-logo" className="vurno-logo" />
 
             </div>
 

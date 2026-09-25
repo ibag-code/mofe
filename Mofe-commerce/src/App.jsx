@@ -14,10 +14,10 @@ function App() {
 
   const fetchCart = async () => {
     const response = await axios.get(
-      "http://localhost:3000/api/cart-items?expand=product",
+      "/api/cart-items?expand=product",
     );
     setCart(response.data);
-  };
+  }
 
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   // useEffect(() => {
-  //   axios.get("http://localhost:3000/api/cart-items?expand=product")
+  //   axios.get("/api/cart-items?expand=product")
   //     .then((response) => {
   //       setCart(response.data);
   //     });

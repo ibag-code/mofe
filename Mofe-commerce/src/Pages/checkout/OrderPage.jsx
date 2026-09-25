@@ -10,14 +10,14 @@ export function Orderpage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/orders?expand=products")
+      .get("/api/orders?expand=products")
       .then((response) => {
         setOrders(response.data);
       });
   }, []);
   return (
     <>
-      <Checkoutheader />
+      <Checkoutheader /> 
 
       <div className="orders-page">
 
@@ -54,7 +54,7 @@ export function Orderpage() {
                         <Fragment key={OrderProduct.product.id} >
                           <div className="product-image-container">
                             <img src=
-                            {`http://localhost:3000/${OrderProduct.product.image}`}                             
+                            {`/${OrderProduct.product.image}`}                             
                             />
                           </div>
 

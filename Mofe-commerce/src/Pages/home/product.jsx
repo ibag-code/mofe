@@ -11,7 +11,7 @@ export function Product({ data, fetchCart }) {
   }
 
   const addToCart = async () => {
-    await axios.post("http://localhost:3000/api/cart-items", {
+    await axios.post("/api/cart-items", {
       productId: data.id,
       quantity: quantity,
     });
@@ -24,7 +24,7 @@ export function Product({ data, fetchCart }) {
     <div className="product-image-content">
       <div className="product-image-div">
         <img
-          src={`http://localhost:3000/${data.image}`}
+          src={`/${data.image}`}
           // {data.image}
           className="product-image-div"
         />
@@ -36,7 +36,7 @@ export function Product({ data, fetchCart }) {
         <div className="rating-added-cart">
           <div className="rating-and-count">
             <img
-              src={`http://localhost:3000/images/ratings/rating-${data.rating.stars * 10}.png`}
+              src={`/images/ratings/rating-${data.rating.stars * 10}.png`}
               alt="rating4.5"
               className="rating-star"
             />
